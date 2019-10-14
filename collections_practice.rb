@@ -75,7 +75,7 @@ def organize_campuses(campuses)
   array = []
 
   campuses.each do |k, v|
-    binding.pry 
+    # binding.pry 
     if new_hash[campuses[k][:location]] == nil
       for i in 0..campuses.to_a.size-1
         if campuses.to_a[i][1][:location] == campuses[k][:location]
