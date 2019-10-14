@@ -1,3 +1,5 @@
+require 'pry'
+
 # your code goes here
 def begins_with_r(array)
   r_words = []
@@ -66,4 +68,25 @@ def find_cool(cool)
   end
   
   array
+end
+
+def organize_campuses(campuses)
+  new_hash = {}
+  array = []
+
+  campuses.each do |k, v|
+    new_hash[campuses[k][:location]] ||= []
+    for i in 0..campuses.to_a.size-1
+      if campuses.to_a[i][1][:location] == campuses[k][:location]
+        array.push(campuses.to_a[i][0])
+      end
+    end
+    binding.pry
+    new_hash[campuses[k][:location]] = array
+  end
+
+  # a = campuses.to_a
+  # puts campuses.to_a[0][0]
+
+  new_hash
 end
