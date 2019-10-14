@@ -75,14 +75,15 @@ def organize_campuses(campuses)
   array = []
 
   campuses.each do |k, v|
-    new_hash[campuses[k][:location]] ||= []
-    for i in 0..campuses.to_a.size-1
-      if campuses.to_a[i][1][:location] == campuses[k][:location]
-        array.push(campuses.to_a[i][0])
+    binding.pry 
+    if new_hash[campuses[k][:location]] == nil
+      for i in 0..campuses.to_a.size-1
+        if campuses.to_a[i][1][:location] == campuses[k][:location]
+          array.push(campuses.to_a[i][0])
+        end
       end
+      new_hash[campuses[k][:location]] = array
     end
-    binding.pry
-    new_hash[campuses[k][:location]] = array
   end
 
   # a = campuses.to_a
