@@ -83,6 +83,7 @@ def organize_campuses(campuses)
         end
       end
       new_hash[campuses[k][:location]] = array
+      binding.pry
     end
   end
 
